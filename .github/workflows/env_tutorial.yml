@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+
+name: EnvVar Tutorial
+env: # you can set environment variables in the workflow
+  WORKFLOW_VARIABLE: "Workflow variables can be accessed anywhere in the workflow!"
+  
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env: # env var can be set in a job too, can only be accessed within the job itself
+      JOB_VARIABLE: "This is my Job variable!!!!!!!"
+      
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: prints the environment variables
+        env: # setting env var in a step means only the step can access it
+          STEP_VARIABLE: "Example step variable....................."
+        run: 
+          echo Here are my custom environment variables
+          echo $WORKFLOW_VARIABLE
+          echo $JOB_VARIABLE
+          echo $STEP_VARIABLE
