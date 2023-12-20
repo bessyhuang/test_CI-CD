@@ -29,6 +29,6 @@ jobs:
           STEP_VARIABLE: "Example step variable....................."
         run: 
           echo -e "Here are my custom environment variables\n"
-          echo -e "$WORKFLOW_VARIABLE"
+          echo -e "$WORKFLOW_VARIABLE\n"
           echo -e "$JOB_VARIABLE\n"
-          echo -e "$STEP_VARIABLE"
+          echo -e "$STEP_VARIABLE\n"
