@@ -28,7 +28,7 @@ jobs:
         env: # setting env var in a step means only the step can access it
           STEP_VARIABLE: "Example step variable....................."
         run: 
-          echo Here are my custom environment variables
-          echo $WORKFLOW_VARIABLE
-          echo $JOB_VARIABLE
-          echo $STEP_VARIABLE
+          echo -e "Here are my custom environment variables\n"
+          echo -e "$WORKFLOW_VARIABLE"
+          echo -e "$JOB_VARIABLE\n"
+          echo -e "$STEP_VARIABLE"
